@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo AWS Community Day 2025 - Zaragoza</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🎉</div>
+            <h1>AWS Community Day 2025</h1>
+            <p class="subtitle">Sorteo Oficial - Zaragoza</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="ruleta">🎰 Ruleta</button>
+            <button class="tab-btn" data-tab="multiple">🎁 Sorteo Múltiple</button>
+        </div>
+
+        <main>
+            <div id="tab-ruleta" class="tab-content active">
+                <div class="card">
+                    <h2 class="card-title">Sorteo con Ruleta</h2>
+
+                    <div class="form-group">
+                        <label for="premio-ruleta">¿Qué vas a sortear?</label>
+                        <input type="text" id="premio-ruleta" placeholder="Ej: Camiseta AWS, Libro, Voucher...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maximo-ruleta">Total de participantes</label>
+                        <input type="number" id="maximo-ruleta" min="1" value="180" placeholder="Ej: 180">
+                    </div>
+
+                    <button id="generar-ruleta" class="btn-primary">🎲 Girar Ruleta</button>
+                </div>
+
+                <div id="ruleta-container" class="ruleta-container hidden">
+                    <div class="ruleta-display">
+                        <div id="numero-ruleta" class="numero-ruleta">0</div>
+                    </div>
+                </div>
+
+                <div id="resultado-ruleta" class="resultados hidden">
+                    <h2>🏆 Ganador</h2>
+                    <div id="premio-ruleta-actual" class="premio-actual"></div>
+                    <div id="ganador-ruleta" class="ganador-final"></div>
+                </div>
+            </div>
+
+            <div id="tab-multiple" class="tab-content">
+                <div class="card">
+                    <h2 class="card-title">Sorteo Múltiple</h2>
+
+                    <div class="form-group">
+                        <label for="premio">¿Qué vas a sortear?</label>
+                        <input type="text" id="premio" placeholder="Ej: Camiseta AWS, Libro, Voucher...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cantidad">¿Cuántos ganadores?</label>
+                        <input type="number" id="cantidad" min="1" value="3" placeholder="Ej: 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="maximo">Total de participantes</label>
+                        <input type="number" id="maximo" min="1" value="180" placeholder="Ej: 180">
+                    </div>
+
+                    <button id="generar-multiple" class="btn-primary">🎲 Realizar Sorteo</button>
+                </div>
+
+                <div id="resultado-multiple" class="resultados hidden">
+                    <h2>🏆 Ganadores del Sorteo</h2>
+                    <div id="premio-actual" class="premio-actual"></div>
+                    <div id="numeros-multiple" class="numeros-container"></div>
+                </div>
+            </div>
+
+            <div id="historial-section" class="historial-section hidden">
+                <h3>📋 Historial de Sorteos</h3>
+                <div id="historial" class="historial"></div>
+            </div>
+        </main>
+
+        <div id="excluidos-section" class="excluidos-section">
+            <h3>❌ Números Excluidos</h3>
+            <div id="excluidos-lista" class="excluidos-lista">
+                <span class="sin-excluidos">Ningún número excluido aún</span>
+            </div>
+            <button id="resetear-todo" class="btn-reset-small">🔄 Resetear Todo</button>
+        </div>
+
+        <footer>
+            <p>AWS Community Day 2025 - Zaragoza</p>
+            <p class="footer-small">awscommunity.es</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

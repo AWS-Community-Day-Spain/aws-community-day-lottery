@@ -1,0 +1,436 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #232f3e 0%, #1a242f 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff9900 0%, #ffb84d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: #aab7b8;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.excluidos-section {
+    background: rgba(231, 76, 60, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(231, 76, 60, 0.4);
+}
+
+.excluidos-section h3 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.excluidos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.numero-excluido {
+    background: rgba(231, 76, 60, 0.9);
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.sin-excluidos {
+    color: #aab7b8;
+    font-style: italic;
+    padding: 8px 0;
+}
+
+.btn-reset-small {
+    padding: 8px 16px;
+    background: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-reset-small:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #aab7b8;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.tab-btn.active {
+    background: linear-gradient(90deg, #ff9900 0%, #ffb84d 100%);
+    color: #232f3e;
+    border-color: #ff9900;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+}
+
+.card-title {
+    color: #232f3e;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: #232f3e;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #d5dbdb;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #232f3e;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: #ff9900;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(90deg, #ff9900 0%, #ffb84d 100%);
+    color: #232f3e;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 153, 0, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.ruleta-container {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.ruleta-container.hidden {
+    display: none;
+}
+
+.ruleta-display {
+    background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+    border-radius: 20px;
+    padding: 40px 60px;
+    box-shadow: 0 10px 40px rgba(255, 153, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.numero-ruleta {
+    font-size: 6rem;
+    font-weight: 900;
+    color: #232f3e;
+    text-align: center;
+    min-width: 150px;
+}
+
+.resultados {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 25px;
+}
+
+.resultados.hidden {
+    display: none;
+}
+
+.resultados h2 {
+    color: #ff9900;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.ganador-final {
+    background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+    color: #232f3e;
+    padding: 40px;
+    border-radius: 15px;
+    font-size: 4rem;
+    font-weight: 900;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(255, 153, 0, 0.5);
+    animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.premio-actual {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-left: 4px solid #ff9900;
+}
+
+.numeros-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.numero {
+    background: linear-gradient(135deg, #ff9900 0%, #ffb84d 100%);
+    color: #232f3e;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 153, 0, 0.3);
+    animation: fadeIn 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.numero-valor {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.historial-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.historial-section.hidden {
+    display: none;
+}
+
+.historial-section h3 {
+    color: #ff9900;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.historial {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.historial-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #ff9900;
+}
+
+.historial-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.historial-hora {
+    font-size: 0.85rem;
+    color: #aab7b8;
+    font-weight: normal;
+}
+
+.historial-ganadores {
+    color: #aab7b8;
+    font-size: 0.95rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #aab7b8;
+    font-size: 0.9rem;
+}
+
+.footer-small {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .numero {
+        min-width: 80px;
+        padding: 15px;
+    }
+    
+    .numero-valor {
+        font-size: 1.5rem;
+    }
+    
+    .numero-ruleta {
+        font-size: 4rem;
+    }
+    
+    .ganador-final {
+        font-size: 3rem;
+        padding: 30px;
+    }
+}

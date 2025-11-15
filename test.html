@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+    <button id="test-btn">Click me</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('test-btn');
+            console.log('Button found:', btn);
+            btn.addEventListener('click', function() {
+                alert('Button works!');
+            });
+        });
+    </script>
+</body>
+</html>
