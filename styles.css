@@ -405,6 +405,13 @@ footer {
 .footer-small {
     font-size: 0.8rem;
     margin-top: 5px;
+    color: #ff9900;
+    text-decoration: none;
+}
+
+.footer-small:hover {
+    color: #ffb84d;
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
